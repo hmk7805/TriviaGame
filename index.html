@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bones Trivia Game</title>
+	
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+	<!-- local .js -->
+	<script src="assets/javascript/app.js"></script>
+</head>
+<body>
+<!-- pseudo code
+start page with theme and start button
+on start form loads and timer begins
+questions have one correct answer adn only one answer can be choosen
+
+if the timer runs out the score is calculated and score card shows
+"time ran out"
+
+correct answers 
+incorrect answers
+unanswered answers
+
+if all choices are made a done is pressed score is calculated and score card shown 
+"All Done"
+
+correct answers 
+incorrect answers
+unanswered answers-->
+
+<h1>Name These Bones</h1>
+<p>You Have <span id ="timer">30</span> secs Remaining</p>
+<form>
+<img src="assets/images/humerus.gif" style="display:block; height:200px">
+  <input type="radio" name="gender" value="male"> Tibia
+  <input type="radio" name="gender" value="female"> Radius
+  <input type="radio" name="gender" value="other"> Humerus 
+  <input type="radio" name="gender" value="none"> None  
+</form> 
+<form>
+<img src="assets/images/clavicle.gif" style="display:block; height:200px">
+  <input type="radio" name="gender" value="male"> Scapula
+  <input type="radio" name="gender" value="female"> Sternum
+  <input type="radio" name="gender" value="other"> Clavicle  
+  <input type="radio" name="gender" value="none"> None  
+</form> 
+<form>
+<img src="assets/images/femur.gif" style="display:block; height:200px">
+  <input type="radio" name="gender" value="male"> Ulna
+  <input type="radio" name="gender" value="female"> Femur
+  <input type="radio" name="gender" value="other"> Fibula  
+  <input type="radio" name="gender" value="none"> None  
+</form> 
+<form>
+<img src="assets/images/tibia.gif" style="display:block; height:200px">
+  <input type="radio" name="gender" value="male"> Tibia
+  <input type="radio" name="gender" value="female"> Radius
+  <input type="radio" name="gender" value="other"> Femur 
+  <input type="radio" name="gender" value="none"> None   
+</form> 
+</body>
+</html>
