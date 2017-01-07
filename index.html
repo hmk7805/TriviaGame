@@ -3,61 +3,99 @@
 <head>
 	<title>Bones Trivia Game</title>
 	
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- local css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+<!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- bootstrap theme -->
+  <link rel="stylesheet" type="text/css" href="/Users/HannahKing/Class/Projects/week-3-game/assets/css/bootstrap-theme.css">
+  
+<!-- local css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+<!-- jQuery -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+
+<!-- Latest compiled bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 	<!-- local .js -->
 	<script src="assets/javascript/app.js"></script>
 </head>
 <body>
-<!-- pseudo code
-start page with theme and start button
-on start form loads and timer begins
-questions have one correct answer adn only one answer can be choosen
+<div class = "container">
+<!-- on every view -->
+  <div class = "header jumbotron">
+    <h1>Bone Trivia!</h1>
+    <p>Press begin and answer the questions  before the time runs out</p>
 
-if the timer runs out the score is calculated and score card shows
-"time ran out"
+  </div>
+<!-- Begin view -->
+  <div class = "jumbotron centered" id = "begin">
+    <button class = "btn btn-default btn-lg button" id = "beginBtn">Begin</button>
+  </div>
+<!-- Question view  -->
+  <div class = "jumbotron" id = "questionContent">
+    <h1>Name These Bones</h1>
+    <div>
+      <p class = "timer">You Have <span id ="timer">30</span> secs Remaining</p>
+    </div>
+    <div class = 'questionArea'>
+      <div class = 'well question left-question'>
+        <form>
+        <img src="assets/images/humerus.gif" style="display:block; height:200px">
+          <input type="radio" name="humerus" value="tibia"> Tibia
+          <input type="radio" name="humerus" value="radius"> Radius
+          <input type="radio" name="humerus" value="humerus"> Humerus 
+          <input type="radio" name="humerus" value="none"> None  
+        </form> 
+      </div>
+      <div class = 'well question right-question'>
+        <form>
+        <img src="assets/images/clavicle.gif" style="display:block; height:200px">
+          <input type="radio" name="clavicle" value="scupula"> Scapula
+          <input type="radio" name="clavicle" value="sternum"> Sternum
+          <input type="radio" name="clavicle" value="clavicle"> Clavicle  
+          <input type="radio" name="clavicle" value="none"> None  
+        </form> 
+      </div>
+      <div class = 'well question left-question'>
+        <form>
+        <img src="assets/images/femur.gif" style="display:block; height:200px">
+          <input type="radio" name="femur" value="ulna"> Ulna
+          <input type="radio" name="femur" value="femur"> Femur
+          <input type="radio" name="femur" value="fibula"> Fibula  
+          <input type="radio" name="femur" value="none"> None  
+        </form> 
+      </div>
+      <div class = 'well question right-question'>
+        <form>
+        <img src="assets/images/tibia.gif" style="display:block; height:200px">
+          <input type="radio" name="tibia" value="tibia"> Tibia
+          <input type="radio" name="tibia" value="radius"> Radius
+          <input type="radio" name="tibia" value="femur"> Femur 
+          <input type="radio" name="tibia" value="none"> None   
+        </form> 
+        </div>
+    </div>
+    <a href="#" class="btn btn-default btn-lg btn-block button" id="doneBtn">Done</a>
+  </div>
+<!-- Score view -->
+  <div class = "jumbotron text-centered" id = "scoreCard">
+    <h2><span id = "timeUp"></span><span id = "allDone"></span></h2>
+    <div class = 'score'>
+      <h2 id = "correct"></h2>
+      <h2 id = "incorrect"></h2>
+      <h2 id = "unanswered"></h2>
+    </div>
 
-correct answers 
-incorrect answers
-unanswered answers
+</div>
 
-if all choices are made a done is pressed score is calculated and score card shown 
-"All Done"
-
-correct answers 
-incorrect answers
-unanswered answers-->
-
-<h1>Name These Bones</h1>
-<p>You Have <span id ="timer">30</span> secs Remaining</p>
-<form>
-<img src="assets/images/humerus.gif" style="display:block; height:200px">
-  <input type="radio" name="gender" value="male"> Tibia
-  <input type="radio" name="gender" value="female"> Radius
-  <input type="radio" name="gender" value="other"> Humerus 
-  <input type="radio" name="gender" value="none"> None  
-</form> 
-<form>
-<img src="assets/images/clavicle.gif" style="display:block; height:200px">
-  <input type="radio" name="gender" value="male"> Scapula
-  <input type="radio" name="gender" value="female"> Sternum
-  <input type="radio" name="gender" value="other"> Clavicle  
-  <input type="radio" name="gender" value="none"> None  
-</form> 
-<form>
-<img src="assets/images/femur.gif" style="display:block; height:200px">
-  <input type="radio" name="gender" value="male"> Ulna
-  <input type="radio" name="gender" value="female"> Femur
-  <input type="radio" name="gender" value="other"> Fibula  
-  <input type="radio" name="gender" value="none"> None  
-</form> 
-<form>
-<img src="assets/images/tibia.gif" style="display:block; height:200px">
-  <input type="radio" name="gender" value="male"> Tibia
-  <input type="radio" name="gender" value="female"> Radius
-  <input type="radio" name="gender" value="other"> Femur 
-  <input type="radio" name="gender" value="none"> None   
-</form> 
 </body>
 </html>
