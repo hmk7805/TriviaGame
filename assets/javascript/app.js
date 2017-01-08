@@ -1,31 +1,17 @@
-//  The stop function
-//  Clears our intervalId
-//  We just pass the name of the interval
-//  to the clearInterval function.
-//  Execute the run function.
 $(document).ready(function(){
-	
-	//the questions and score card should be hidden on load
 	reset();
 	function reset() {
 		number = 30;
 		$("#questionContent").hide(0);
 		$("#scoreCard").hide(0);
-		console.log("loaded"); 
 	}
 	var number = 30;
 	var intervalId;
-	
-	//on click, timer countdown starts
 	$("#beginBtn").click(function(){
-		console.log("click received");
 		timerRun();
 		$("#begin").hide(0);
 		$("#questionContent").show(0);
-		
 	});
-	//on click timer countdown stops, questions hide, Score shows and questions hide
-	//NEED: function for score keeping needs to run
 	$("#doneBtn").click(function(){
 		stop();
 	    scoreObj.calc()
@@ -33,16 +19,12 @@ $(document).ready(function(){
 		$('#allDone').html("All Done!");
 		$("#questionContent").hide();
 	});
-	//timerRun begins the decrement
 	function timerRun() {
 	  intervalId = setInterval(decrement, 1000);
 	}
-	//decrement lowers the number, posts to DOM, makes alert to the user and clears the interval 
 	function decrement() {
 	  number--;
 	  $("#timer").html(number);
-	  //if the timer runs out, stop the timerRun, alert time up, hide questions, show score
-
 	  if (number === 0) {
 	    stop();
 	    scoreObj.calc()
@@ -51,7 +33,6 @@ $(document).ready(function(){
 		$("#questionContent").hide();
 	  }
 	}
-	//stops the timer interval
 	function stop() {
 	  clearInterval(intervalId);
 	}
@@ -80,10 +61,8 @@ $(document).ready(function(){
 			$('#correct').html('Correct: ' + scoreObj.correct)
 			$('#incorrect').html('Incorrect: ' + scoreObj.incorrect)
 			$('#unanswered').html('Unanswered: ' + scoreObj.unanswered)
-
 		}
 	}
-
 });
 
 
